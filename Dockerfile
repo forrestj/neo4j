@@ -25,4 +25,12 @@ RUN make
 RUN make install
 ENV TERM xterm
 
+# myman
+RUN apt-get install libncurses5-dev groff
+RUN wget http://downloads.sourceforge.net/project/myman/myman-cvs/myman-cvs-2009-10-30/myman-wip-2009-10-30.tar.gz
+RUN tar xvfvz myman-wip-2009-10-30.tar.gz
+RUN ./configure
+RUN make
+RUN make install
+
 CMD sleep 999999
